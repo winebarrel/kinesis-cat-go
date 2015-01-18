@@ -6,7 +6,7 @@ before_install:
 script:
   - make
   - make package
-  - pbput *.tar.gz
+  - lzma -9 -f -c *.tar.gz | base64 | pastebinit -b http://paste.ubuntu.com
 notifications:
   email:
     on_success: always
