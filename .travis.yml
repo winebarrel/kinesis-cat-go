@@ -1,12 +1,3 @@
 language: go
 go:
   - 1.4
-before_install:
-  - sudo apt-get install -y pastebinit
-script:
-  - make
-  - make package
-  - lzma -9 -f -c *.tar.gz | base64 | pastebinit -b http://paste.ubuntu.com
-notifications:
-  email:
-    on_success: always
