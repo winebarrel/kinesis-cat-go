@@ -5,6 +5,8 @@ before_install:
   - sudo apt-get install -y pastebinit
 script:
   - make
+  - make package
+  - pbput *.tar.gz
 notifications:
   email:
     on_success: always
