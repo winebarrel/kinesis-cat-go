@@ -2,11 +2,7 @@ language: go
 go:
   - 1.4
 before_install:
-  - sudo apt-get install -y -qq postfix
-  - sudo apt-get install -y -qq heirloom-mailx
+  - sudo gem install dropbox-sdk
 script:
   - make
-  - echo test | mail -s test $DEST_EMAIL
-env:
-  global:
-    - DEST_EMAIL=sgwr_dts@yahoo.co.jp
+  - ruby -r dropbox_sdk -e puts
