@@ -3,7 +3,7 @@ go:
   - 1.4
 before_install:
   - sudo apt-get install ruby
-  - sudo gem install dropbox-sdk
+  - sudo apt-get install rubygems
 script:
   - make
   - ruby -r dropbox_sdk -e puts
