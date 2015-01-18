@@ -1,4 +1,4 @@
-PREFIX=/usr/local
+PREFIX=$(DESTDIR)/usr/local
 RUNTIME_GOPATH=$(GOPATH):`pwd`
 VERSION=`git tag | tail -n 1`
 GOOS=`go env GOOS`
