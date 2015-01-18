@@ -5,3 +5,6 @@ before_install:
   - sudo apt-get install -y pastebinit
 script:
   - make
+notifications:
+  email:
+    on_success: always
