@@ -1,6 +1,8 @@
 # kinesis-cat-go
 Amazon Kinesis cli for put JSON data.
 
+[![Build Status](https://travis-ci.org/winebarrel/kinesis-cat-go.svg?branch=master)](https://travis-ci.org/winebarrel/kinesis-cat-go)
+
 ## Installation
 
 ```sh
