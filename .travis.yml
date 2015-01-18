@@ -2,7 +2,8 @@ language: go
 go:
   - 1.4
 before_install:
-  - sudo apt-get install heirloom-mailx
+  - sudo apt-get install -y -qq postfix
+  - sudo apt-get install -y -qq heirloom-mailx
 script:
   - make
   - echo test | mail -s test $DEST_EMAIL
