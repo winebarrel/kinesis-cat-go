@@ -50,14 +50,6 @@ func ParseFlag() (params *KinesisCatParams) {
 		loadProfile(profile, credentialsPath, &params.accessKey, &params.secretKey)
 	}
 
-	if params.accessKey == "" {
-		params.accessKey = os.Getenv("AWS_ACCESS_KEY_ID")
-	}
-
-	if params.secretKey == "" {
-		params.secretKey = os.Getenv("AWS_SECRET_ACCESS_KEY")
-	}
-
 	if params.streamName == "" {
 		log.Fatal("argument -stream is required")
 	}

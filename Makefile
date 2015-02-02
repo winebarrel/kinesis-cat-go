@@ -8,7 +8,7 @@ kinesis-cat:	main.go src/kinesis_cat/kinesis-cat.go dependencies
 	GOPATH=$(RUNTIME_GOPATH) go build -o kinesis-cat main.go
 
 dependencies:
-	go get github.com/crowdmob/goamz/kinesis
+	go get github.com/AdRoll/goamz/kinesis
 	go get code.google.com/p/go-uuid/uuid
 	go get github.com/vaughan0/go-ini
 

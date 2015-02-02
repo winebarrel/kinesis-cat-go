@@ -42,7 +42,12 @@ func putJSON(client *kinesis_cat.KinesisCat, json []interface{}) {
 
 func main() {
 	params := kinesis_cat.ParseFlag()
-	client := kinesis_cat.NewKinesisCat(params)
+	client, err := kinesis_cat.NewKinesisCat(params)
+
+	if err != nil {
+		log.Fatal(err)
+	}
+
 	json := reatJSON()
 	putJSON(client, json)
 }

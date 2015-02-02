@@ -2,8 +2,9 @@ package kinesis_cat
 
 import (
 	"encoding/json"
-	"github.com/crowdmob/goamz/aws"
-	"github.com/crowdmob/goamz/kinesis"
+	"github.com/AdRoll/goamz/aws"
+	"github.com/AdRoll/goamz/kinesis"
+	"time"
 )
 
 type KinesisCat struct {
@@ -29,19 +30,16 @@ func (p *KinesisCat) PutJSON(jsonArray []interface{}) (err error) {
 	return
 }
 
-func NewKinesisCat(params *KinesisCatParams) *KinesisCat {
+func NewKinesisCat(params *KinesisCatParams) (kinesisCat *KinesisCat, err error) {
 	region := aws.GetRegion(params.regionName)
-
-	auth := aws.Auth{
-		AccessKey: params.accessKey,
-		SecretKey: params.secretKey,
-	}
-
+	auth, err := aws.GetAuth(params.accessKey, params.secretKey, "", time.Time{})
 	client := kinesis.New(auth, region)
 
-	return &KinesisCat{
+	kinesisCat = &KinesisCat{
 		client:       client,
 		streamName:   params.streamName,
 		partitionKey: params.partitionKey,
 	}
+
+	return
 }
