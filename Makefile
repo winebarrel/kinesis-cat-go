@@ -13,7 +13,7 @@ dependencies:
 	go get github.com/vaughan0/go-ini
 
 install: kinesis-cat
-	install -m 755 kinesis-cat $(PREFIX)/bin/
+	install -m 755 kinesis-cat $(DESTDIR)$(PREFIX)/bin/
 
 clean:
 	rm -f kinesis-cat *.tar.gz
