@@ -6,7 +6,7 @@ Amazon Kinesis cli for put JSON data.
 ## Installation
 
 ```sh
-make build
+make
 make install
 ```
 
